@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.blinking-cursor {
+  display: inline-block;
+  width: 1px;
+  height: 1em;
+  background-color: green;
+  animation: blink 1s step-start infinite;
+}
+
+html {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+html::-webkit-scrollbar {
+  display: none;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
