@@ -139,9 +139,11 @@ export default function Home() {
   };
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center bg-black p-4 text-white md:p-6">
-      <div className="w-full max-w-md rounded-lg border border-gray-700 bg-gray-900 p-6 shadow-lg">
-        <h1 className="mb-4 text-2xl font-bold">Welcome to Data-Grabber!</h1>
+    <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-r from-gray-800 via-gray-900 to-black p-4 text-white md:p-6">
+      <div className="w-full max-w-md rounded-lg border border-gray-700 bg-gray-900 p-6 shadow-lg shadow-gray-800/50">
+        <h1 className="text-gradient mb-4 bg-gradient-to-r from-teal-400 via-blue-500 to-purple-600 bg-clip-text text-3xl font-extrabold text-transparent">
+          Welcome to Data-Grabber!
+        </h1>
         <p className="mb-4 text-sm text-gray-400">
           Input your data (or not, we won&apos;t steal your data or anything,
           promise 😉)
@@ -156,7 +158,7 @@ export default function Home() {
             'SSN',
           ].map((field) => (
             <div className="mb-4" key={field}>
-              <label className="mb-1 block text-sm font-medium">
+              <label className="mb-1 block text-sm font-medium text-gray-300">
                 {field.replace(/([A-Z])/g, ' $1').toUpperCase()}:
               </label>
               <input
@@ -164,7 +166,7 @@ export default function Home() {
                 name={field}
                 value={formData[field]}
                 onChange={handleChange}
-                className={`w-full rounded-lg border bg-gray-800 p-2 text-gray-200 ${errors[field] ? 'border-red-600' : 'border-gray-600'}`}
+                className={`w-full rounded-lg border bg-gray-800 p-3 text-gray-200 shadow-sm focus:border-teal-500 focus:ring-1 focus:ring-teal-500 ${errors[field] ? 'border-red-600' : 'border-gray-600'}`}
               />
               {errors[field] && (
                 <span className="text-xs text-red-500">
@@ -184,7 +186,7 @@ export default function Home() {
           <div className="mb-4 mt-7">
             <button
               type="submit"
-              className="w-full rounded-lg bg-blue-600 p-2 text-sm text-white shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full rounded-lg bg-teal-600 p-3 text-sm font-medium text-white shadow-md hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-500"
             >
               Submit
             </button>
